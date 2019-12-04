@@ -1,0 +1,43 @@
+dem instal rspec on a high level in ROR folder structure
+run rspec . in project folder
+
+
+Assignment: Method Testing
+Previously, we showed how to test getter and setter for attributes in our class. In this assignment, you will be testing both attributes and public methods. For example, to test the elevator_pitch method from our Project class, update your RSpec file to the following:
+
+/project/project_spec.rb
+require_relative 'project'
+RSpec.describe Project do
+  before(:each) do
+    # updated this block to create two projects
+    @project1 = Project.new('Project 1', 'description 1')
+    @project2 = Project.new('Project 2', 'description 2')
+  end
+  ... 
+    # Code from the previous tab removed for brevity. Leave it in.
+  ...
+  it 'has a method elevator_pitch to explain name and description' do
+    expect(@project1.elevator_pitch).to eq("Project 1, description 1")
+    expect(@project2.elevator_pitch).to eq("Project 2, description 2")
+  end
+end
+
+Run the test and we should get 0 failures!
+
+In your Project class, do the following:
+- Add a new owner attribute and allow it to be set to a string upon initialization (eg. Project.new("Project 1", "description 1", "John Doe")
+
+- Add a new tasks attribute and initialize it to be empty array.
+
+- Add a tasks method that returns the tasks for each project
+
+- Add an add_tasks method that pushes a single tasks to the tasks attribute
+
+- Write a test for the owner attribute. It should have a getter and a setter.
+
+- Write a test for the tasks and add_tasks methods
+
+Advanced Challenge:
+- Add a new method called print_tasks that will print each task in your project
+
+- Write a test for the print_tasks method
