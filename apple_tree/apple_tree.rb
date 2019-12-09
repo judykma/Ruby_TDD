@@ -1,11 +1,18 @@
 class Apple_Tree
-    attr_accessor :age, :height, :apple_count
+    attr_accessor :age #using attr_acc creates both GETTER and SETTER
     
     def initialize
         @age = 0
         @height = 3
         @apple_count = 0
     end
+    def height
+        @height
+    end
+    def apple_count
+        @apple_count
+    end
+
     def year_gone_by
         @age += 1
         @height *= 1.1
